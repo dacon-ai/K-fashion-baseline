@@ -27,21 +27,27 @@ except AssertionError:
 @DATASETS.register_module()
 class CocoDataset(CustomDataset):
 
-    CLASSES = ('person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus',
-               'train', 'truck', 'boat', 'traffic light', 'fire hydrant',
-               'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog',
-               'horse', 'sheep', 'cow', 'elephant', 'bear', 'zebra', 'giraffe',
-               'backpack', 'umbrella', 'handbag', 'tie', 'suitcase', 'frisbee',
-               'skis', 'snowboard', 'sports ball', 'kite', 'baseball bat',
-               'baseball glove', 'skateboard', 'surfboard', 'tennis racket',
-               'bottle', 'wine glass', 'cup', 'fork', 'knife', 'spoon', 'bowl',
-               'banana', 'apple', 'sandwich', 'orange', 'broccoli', 'carrot',
-               'hot dog', 'pizza', 'donut', 'cake', 'chair', 'couch',
-               'potted plant', 'bed', 'dining table', 'toilet', 'tv', 'laptop',
-               'mouse', 'remote', 'keyboard', 'cell phone', 'microwave',
-               'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock',
-               'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush')
-
+#     CLASSES = ('person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus',
+#                'train', 'truck', 'boat', 'traffic light', 'fire hydrant',
+#                'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog',
+#                'horse', 'sheep', 'cow', 'elephant', 'bear', 'zebra', 'giraffe',
+#                'backpack', 'umbrella', 'handbag', 'tie', 'suitcase', 'frisbee',
+#                'skis', 'snowboard', 'sports ball', 'kite', 'baseball bat',
+#                'baseball glove', 'skateboard', 'surfboard', 'tennis racket',
+#                'bottle', 'wine glass', 'cup', 'fork', 'knife', 'spoon', 'bowl',
+#                'banana', 'apple', 'sandwich', 'orange', 'broccoli', 'carrot',
+#                'hot dog', 'pizza', 'donut', 'cake', 'chair', 'couch',
+#                'potted plant', 'bed', 'dining table', 'toilet', 'tv', 'laptop',
+#                'mouse', 'remote', 'keyboard', 'cell phone', 'microwave',
+#                'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock',
+#                'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush')
+#     CLASSES = ['탑', '블라우스', '티셔츠', '니트웨어', '셔츠', '브라탑', '후드티', 
+#                 '청바지', '팬츠', '스커트', '레깅스', '조거팬츠', '코트', '재킷', 
+#                 '점퍼', '패딩', '베스트', '가디건', '짚업', '드레스', '점프수트' ]
+    CLASSES = ['top', 'blouse', 't-shirt', 'Knitted fabri', 'shirt', 'bra top', 'hood', 
+               'blue jeans', 'pants', 'skirt', 'leggings', 'jogger pants', 'coat', 'jacket', 
+               'jumper', 'padding jacket', 'best', 'kadigan', 'zip up', 'dress', 'jumpsuit' ]
+    
     def load_annotations(self, ann_file):
         """Load annotation from COCO style annotation file.
 
