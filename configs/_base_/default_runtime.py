@@ -137,11 +137,8 @@ lr_config = dict(
 total_epochs = 12
 
 
-
-
-
 dataset_type = 'CocoDataset'
-data_root = '/home/ubuntu/Dacon/jin/Opinion/mmdetection/datasets/data/'
+data_root = '/home/ubuntu/Dacon/jin/Opinion/mmdetection/datasets/'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [
@@ -175,17 +172,17 @@ data = dict(
     train=dict(
         type=dataset_type,
         ann_file=data_root + 'train.json',
-        img_prefix=data_root + 'train',
+        img_prefix=data_root + 'train_all',
         pipeline=train_pipeline),
     val=dict(
         type=dataset_type,
         ann_file=data_root + 'test_private.json',
-        img_prefix=data_root + 'test',
+        img_prefix=data_root + 'test_all',
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
         ann_file=data_root + 'test_pubilc.json',
-        img_prefix=data_root + 'test',
+        img_prefix=data_root + 'test_all',
         pipeline=test_pipeline))
 evaluation = dict(metric=['bbox', 'segm'])
 
